@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <script>
+        //Usually, you put script-tags into the head
+         function myFunctionFast() {
+            //This performs a POST-Request.
+            //Use "$.get();" in order to perform a GET-Request (you have to take a look in the rest-API-documentation, if you're unsure what you need)
+            //The Browser downloads the webpage from the given url, and returns the data.
+            $.post( "http://arduino.local/arduino/analog/5/120", function( data ) {
+                 //As soon as the browser finished downloading, this function is called.
+                 $('#demo').html(data);
+            });
+        }
+        function myFunctionGo() {
+            //This performs a POST-Request.
+            //Use "$.get();" in order to perform a GET-Request (you have to take a look in the rest-API-documentation, if you're unsure what you need)
+            //The Browser downloads the webpage from the given url, and returns the data.
+            $.post( "http://arduino.local/arduino/analog/5/90", function( data ) {
+                 //As soon as the browser finished downloading, this function is called.
+                 $('#demo').html(data);
+            });
+        }
+        function myFunctionStop() {
+            //This performs a POST-Request.
+            //Use "$.get();" in order to perform a GET-Request (you have to take a look in the rest-API-documentation, if you're unsure what you need)
+            //The Browser downloads the webpage from the given url, and returns the data.
+            $.post( "http://arduino.local/arduino/analog/5/0", function( data ) {
+                 //As soon as the browser finished downloading, this function is called.
+                 $('#demo').html(data);
+            });
+        }
+        function myFunctionOn() {
+            //This performs a POST-Request.
+            //Use "$.get();" in order to perform a GET-Request (you have to take a look in the rest-API-documentation, if you're unsure what you need)
+            //The Browser downloads the webpage from the given url, and returns the data.
+            $.post( "http://arduino.local/arduino/digital/13/1", function( data ) {
+                 //As soon as the browser finished downloading, this function is called.
+                 $('#demo').html(data);
+            });
+        }
+        function myFunctionOff() {
+            //This performs a POST-Request.
+            //Use "$.get();" in order to perform a GET-Request (you have to take a look in the rest-API-documentation, if you're unsure what you need)
+            //The Browser downloads the webpage from the given url, and returns the data.
+            $.post( "http://arduino.local/arduino/digital/13/0", function( data ) {
+                 //As soon as the browser finished downloading, this function is called.
+                 $('#demo').html(data);
+            });
+        }
+    </script>
+</head>
+<body>
+
+    <p> Go Go Train </p>
+
+    <button onclick="myFunctionFast()" style="font-size: 130px;background-color: yellow;">Fast</button>
+    <button onclick="myFunctionGo()" style="font-size: 130px;background-color: greenyellow; padding-left: 30px;padding-right: 30px; margin-left: 50px;">Go </button>
+    <button onclick="myFunctionStop()" style="font-size: 130px;background-color: red; margin-left: 50px; ">Stop</button>
+ 
+
+    <p id="demo"></p>    
+</body>
+</html>
